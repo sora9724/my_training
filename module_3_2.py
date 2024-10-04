@@ -1,6 +1,6 @@
 def send_email(mesage, recipient,*, sender = 'university.help@gmail.com'):
     if '@' not in recipient or '@' not in sender:
-        return print("Невозможно отправить письмо с адреса <sender> на адрес <recipient>")
+        return print("Невозможно отправить письмо с адреса " +sender+ " на адрес " +recipient+"")
 
     domen_list = ['.com', '.net', '.ru']
     domen = True

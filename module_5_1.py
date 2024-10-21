@@ -5,7 +5,7 @@ class House:
         print(f'{name}, {number_of_floor}')
 
     def go_to(self, new_floor):
-        if new_floor <= 0:
+        if new_floor < 1:
             print("Такого этажа не существует")
         for floor in range(1, new_floor + 1):
             if new_floor > self.number_of_floor:

@@ -1,4 +1,11 @@
 class House:
+    houses_history = []
+
+    # Добавил ЖК в историю
+    def  __new__(cls, *args, **kwargs):    
+        cls.houses_history.append(args[0])
+        return super().__new__(cls)
+
     def __init__(self, name, number_of_floor):
         self.name = name
         self.number_of_floor = number_of_floor
@@ -9,12 +16,8 @@ class House:
     def __str__(self):
         return f'Название: {self.name}, кол-во этажей: {self.number_of_floor}'
 
-    houses_history = []
-
-    def  __new__(cls, *args, **kwargs):
-        return cls.houses_history.append(args[0])
-
-    def __del__(self):
+    # Удалил ЖК из истории
+    def __del__(self):   
         print(f'{self.name} снесен, но он останется в истории')
 
 h1 = House('ЖК Эльбрус', 10)

@@ -43,13 +43,16 @@ class Circle(Figure):
         __radius = self.__sides
 
     def get_square(self):
-        pass
+        s = (self.__radius * 3.14) ** 2
+        print(s)
 
 class Triangle(Figure):
     sides_count = 3
 
     def get_square(self):
-        pass
+        p = 0.5 * (self.__sides)
+        s = (p * (p - self.__sides) * (p - self.__sides) * (p - self.__sides)) ** 0.5\
+        
 
 class Cube(Figure):
     side_count = 12
